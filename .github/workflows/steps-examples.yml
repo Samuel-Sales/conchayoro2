@@ -5,8 +5,12 @@ on:
     branches: ["main"]
 
 jobs:
-  build:
+  jobx:
     runs-on: ubuntu-latest
     steps:
-      - name: executa comando
-        run: echo "Configuração inicial do pipeline"
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 14
+      - name: verification of node version
+        run: node --version
